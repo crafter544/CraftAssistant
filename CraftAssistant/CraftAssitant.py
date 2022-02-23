@@ -23,7 +23,8 @@ while True:
                   "jacob = tells you about jacob\n"
                   "stop = stops the program\n"
                   "random number = picks a random number between 1 and 100\n"
-                  "calculator = a built in calculator (that can do multiplication,divide,subtract,addition)")
+                  "calculator = a built in calculator (that can do multiplication,divide,subtract,addition\n"
+                  "google = opens a new tab in google")
 
         if Quest == "calculator":
 
@@ -114,6 +115,10 @@ while True:
 
         x = random.randint(1, 100)
         print(x)
+
+    if Quest == "google":
+        import webbrowser
+        webbrowser.open_new_tab("google.com")
 
     if Quest == "stop":
         print("Ok sir have a good day")
