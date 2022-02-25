@@ -24,7 +24,9 @@ while True:
                   "stop = stops the program\n"
                   "random number = picks a random number between 1 and 100\n"
                   "calculator = a built in calculator (that can do multiplication,divide,subtract,addition\n"
-                  "google = opens a new tab in google")
+                  "web = asks you what do you want to open on the web\n"
+                  "whatweb = what you can look up on the web\n"
+                  ">")
 
         if Quest == "calculator":
 
@@ -116,9 +118,31 @@ while True:
         x = random.randint(1, 100)
         print(x)
 
-    if Quest == "google":
+    if Quest == "whatweb":
+        print("===WhatWeb===\n"
+              "--USE THE COMMAND 'WEB' TO ACCESS THE WEB COMMAND--\n"
+              "(then uses 'stop' to stop the command and return to main text bar.\n"
+              "-You can use\n"
+              "google\n"
+              "youtube\n"
+              "wikipedia\n"
+              "bing\n")
+
+    if Quest == "web":
         import webbrowser
-        webbrowser.open_new_tab("google.com")
+        while True:
+            web = input("What do you want to look up Sir?")
+            if web == "google":
+                webbrowser.open_new_tab("google.com")
+            if web == "youtube":
+                webbrowser.open_new_tab("youtube.com")
+            if web == "wiki":
+                webbrowser.open_new_tab("wikipedia.org")
+            if web == "bing":
+                webbrowser.open_new_tab("bing.com")
+            if web == "stop":
+                break
+
 
     if Quest == "stop":
         print("Ok sir have a good day")
