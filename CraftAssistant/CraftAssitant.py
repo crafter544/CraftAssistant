@@ -1,10 +1,16 @@
 # my take on a smart assistant
+import time
+import webbrowser
+import datetime
+import random
 
 print("=====CraftAssistant=====")
 
 # user name log in
 name = str(input("What is your name?"))
 if name == "will":
+    print("Checking if that's your name")
+    time.sleep(0.5)
     print("Welcome Back Sir!")
 else:
     print("Access Denied!")
@@ -24,9 +30,9 @@ while True:
                   "stop = stops the program\n"
                   "random number = picks a random number between 1 and 100\n"
                   "calculator = a built in calculator (that can do multiplication,divide,subtract,addition\n"
-                  "web = asks you what do you want to open on the web\n"
-                  "whatweb = what you can look up on the web\n"
-                  ">")
+                  "Web = use the set websites to access them\n"
+                  " >whatweb = what you can look up on the web\n"
+                  )
 
         if Quest == "calculator":
 
@@ -83,8 +89,6 @@ while True:
 
     # random emotional response
     if Quest == "how are you":
-        import random
-
         random_word_list = ["I'm felling ok Sir", "I'm having a strong connection to your wifi Sir",
                             "I'm waiting for you to ask a question Sir", "i'm felling nice today Sir",
                             "i'm doing good Sir"]
@@ -98,8 +102,6 @@ while True:
 
     # money and cash
     if Quest == "money":
-        import random
-
         random_word_listM = ["£100 has been put into your account", "YOU HAVE WON £100,000!!",
                              "A shiny one pound sterling as been placed into account"]
         random_Monword = random.choice(random_word_listM)
@@ -120,29 +122,55 @@ while True:
 
     if Quest == "whatweb":
         print("===WhatWeb===\n"
-              "--USE THE COMMAND 'WEB' TO ACCESS THE WEB COMMAND--\n"
-              "(then uses 'stop' to stop the command and return to main text bar.\n"
+              "--USE THE COMMAND 'type' TO USE YOUR OWN WEBSITE URL (eg: youtube.com)--\n"
+              "(then uses 'stop' to stop the command and return to main text bar.)\n"
+              "==USE THE COMMAND 'presets' to look at the presets within CraftAssistant==\n"
               "-You can use\n"
               "google\n"
               "youtube\n"
               "wikipedia\n"
-              "bing\n")
+              "bing\n"
+              "github\n")
 
     if Quest == "web":
-        import webbrowser
         while True:
             web = input("What do you want to look up Sir?")
-            if web == "google":
-                webbrowser.open_new_tab("google.com")
-            if web == "youtube":
-                webbrowser.open_new_tab("youtube.com")
-            if web == "wiki":
-                webbrowser.open_new_tab("wikipedia.org")
-            if web == "bing":
-                webbrowser.open_new_tab("bing.com")
+            if web == "type":
+                website = input("What website do you want to search Sir")
+                print("searching")
+                time.sleep(1.5)
+                webbrowser.open_new_tab(website)
+            if web == "help":
+                print("Use the command 'stop' then use 'whatweb'")
+
             if web == "stop":
                 break
 
+            if web == "presets":
+                print("google = google.com\n"
+                      "youtube = youtube.com\n"
+                      "wiki = wikiipedia.org\n"
+                      "bing = bing.com\n"
+                      "github = github.com\n")
+                pre = input("What preset do you want")
+                if pre == "google":
+                    webbrowser.open_new_tab("google.com")
+                if pre == "youtube":
+                    webbrowser.open_new_tab("youtube.com")
+                if pre == "wiki":
+                    webbrowser.open_new_tab("wikipedia.org")
+                if pre == "bing":
+                    webbrowser.open_new_tab("bing.com")
+                if pre == "github":
+                    webbrowser.open_new_tab("github.com")
+            if web == "stop":
+                break
+
+    if Quest == "jamie":
+        print("Still Learning Python")
+
+    if Quest == "egg":
+        print("This is a easter egg. Nice Find!")
 
     if Quest == "stop":
         print("Ok sir have a good day")
