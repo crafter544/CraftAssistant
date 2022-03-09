@@ -11,14 +11,14 @@ name = str(input("What is your name?"))
 if name == "will":
     print("Checking if that's your name")
     time.sleep(0.5)
-    print("Welcome Back Sir!")
+    print("Welcome Back ")
 else:
     print("Access Denied!")
 
 while True:
     # a calculator
     if name == "will":
-        Quest = input("What do you need Sir?")
+        Quest = input("What do you need " + name)
 
         if Quest == "help":
             print("====Help====\n"
@@ -27,11 +27,15 @@ while True:
                   "how are you = a emotional response from craftyassistiant\n"
                   "money = places fake money into a fake account\n"
                   "jacob = tells you about jacob\n"
+                  "jamie = tells you about jamie\n"
                   "stop = stops the program\n"
                   "random number = picks a random number between 1 and 100\n"
                   "calculator = a built in calculator (that can do multiplication,divide,subtract,addition\n"
                   "Web = use the set websites to access them\n"
                   " >whatweb = what you can look up on the web\n"
+                  "Heads or Tails = plays a game of heads or tails\n"
+                  "time = tells you the time\n"
+                  "date = tells you the date\n"
                   )
 
         if Quest == "calculator":
@@ -64,8 +68,8 @@ while True:
 
                 # check if choice is one of the four options
                 if choice in ('1', '2', '3', '4'):
-                    num1 = float(input("Enter first number: "))
-                    num2 = float(input("Enter second number: "))
+                    num1 = float(input("Enter first number" + name, " :"))
+                    num2 = float(input("Enter second number" + name, " :"))
 
                     if choice == '1':
                         print(num1, "+", num2, "=", add(num1, num2))
@@ -89,9 +93,9 @@ while True:
 
     # random emotional response
     if Quest == "how are you":
-        random_word_list = ["I'm felling ok Sir", "I'm having a strong connection to your wifi Sir",
-                            "I'm waiting for you to ask a question Sir", "i'm felling nice today Sir",
-                            "i'm doing good Sir"]
+        random_word_list = ["I'm felling ok " + name, "I'm having a strong connection to your wifi Sir " + name,
+                            "I'm waiting for you to ask a question Sir " + name, "i'm felling nice today Sir " + name,
+                            "i'm doing good Sir " + name]
         random_word = random.choice(random_word_list)
         print(random_word)
 
@@ -109,10 +113,11 @@ while True:
 
     # keep word system saves a word or sentence if you want
     if Quest == "keepword":
-        keepword = str(input("What word(s) do you want to keep Sir?"))
+        keepword = str(input("What word(s) do you want to keep " + name))
         print("Your keep word is " + keepword)
     if Quest == "what is my keepword":
-        print("Your keep word is " + keepword, "Sir")
+        print("Your keep word is " + keepword, +name)
+
     # random number generator
     if Quest == "random number":
         import random
@@ -134,9 +139,9 @@ while True:
 
     if Quest == "web":
         while True:
-            web = input("What do you want to look up Sir?")
+            web = input("What do you want to look up " +name)
             if web == "type":
-                website = input("What website do you want to search Sir")
+                website = input("What website do you want to search " +name)
                 print("searching")
                 time.sleep(1.5)
                 webbrowser.open_new_tab(website)
@@ -167,11 +172,32 @@ while True:
                 break
 
     if Quest == "jamie":
-        print("Still Learning Python")
+        print("He is")
+        time.sleep(1)
+        print("Seening what he is doing")
+        time.sleep(1)
+        print("-He is still trying to learn python-")
 
     if Quest == "egg":
         print("This is a easter egg. Nice Find!")
 
+    if Quest == "heads or tails":
+        random_coin_flip = ["Heads", "Tails"]
+        random_Coin = random.choice(random_coin_flip)
+        print(random_Coin)
+
+    if Quest == "survival game":
+        print("IN PROGRESS")
+
+    if Quest == "date":
+        tday = datetime.date.today()
+        print(tday)
+
+    if Quest == "time":
+        t = datetime.datetime.now()
+        print(t)
+
     if Quest == "stop":
-        print("Ok sir have a good day")
+        print("Ok sir have a good day " +name)
         break
+
